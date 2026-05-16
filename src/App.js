@@ -4,10 +4,14 @@ import AppRoutes from "./routes/AppRoutes";
 
 import Navbar from "./components/Navbar";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import BackgroundNoise from "./components/BackgroundNoise";
+import CursorGlow from "./components/CursorGlow";
+import LoaderScreen from "./components/LoaderScreen";
 
 
 function App() {
   return (
+    
     <Router>
       <div
         className="
@@ -19,7 +23,8 @@ function App() {
         {/* NAVBAR */}
 
         <Navbar />
-
+        <BackgroundNoise />
+        <CursorGlow />
         {/* ROUTES */}
 
         <AppRoutes />
@@ -30,7 +35,7 @@ function App() {
 
         {/* FOOTER */}
 
-    
+        <BackgroundNoise />
       </div>
     </Router>
   );

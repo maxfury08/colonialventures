@@ -9,7 +9,8 @@ export default function InvestmentPlans() {
 
       investment: "LKR 100,000",
 
-      returns: "Monthly Returns",
+      returns:
+        "Monthly Returns",
 
       featured: false,
     },
@@ -19,7 +20,8 @@ export default function InvestmentPlans() {
 
       investment: "LKR 500,000",
 
-      returns: "Higher Yield Potential",
+      returns:
+        "Higher Yield Potential",
 
       featured: true,
     },
@@ -27,9 +29,11 @@ export default function InvestmentPlans() {
     {
       title: "Estate Partner",
 
-      investment: "LKR 1,000,000+",
+      investment:
+        "LKR 1,000,000+",
 
-      returns: "Premium Investor Benefits",
+      returns:
+        "Premium Investor Benefits",
 
       featured: false,
     },
@@ -38,13 +42,48 @@ export default function InvestmentPlans() {
   return (
     <section
       className="
+      relative
+
       bg-white
 
       py-28
+      md:py-32
+
       px-6
+
+      overflow-hidden
       "
     >
-      <div className="max-w-7xl mx-auto">
+      {/* SOFT BACKGROUND GLOW */}
+
+      <div
+        className="
+        absolute
+
+        top-0
+        left-1/2
+        -translate-x-1/2
+
+        w-[700px]
+        h-[700px]
+
+        bg-[#D4AF37]/5
+
+        blur-[140px]
+
+        rounded-full
+        "
+      ></div>
+
+      <div
+        className="
+        relative
+        z-10
+
+        max-w-7xl
+        mx-auto
+        "
+      >
         {/* HEADER */}
 
         <motion.div
@@ -59,8 +98,14 @@ export default function InvestmentPlans() {
           transition={{
             duration: 1,
           }}
-          className="text-center mb-24"
+          className="
+          text-center
+
+          mb-24
+          "
         >
+          {/* SMALL TITLE */}
+
           <p
             className="
             uppercase
@@ -69,7 +114,8 @@ export default function InvestmentPlans() {
 
             text-[#D4AF37]
 
-            text-lg
+            text-sm
+            md:text-base
 
             mb-6
             "
@@ -77,16 +123,24 @@ export default function InvestmentPlans() {
             Investment Plans
           </p>
 
+          {/* MAIN TITLE */}
+
           <h2
             className="
-            text-5xl
-            md:text-7xl
+            text-4xl
+            md:text-6xl
+            lg:text-7xl
 
             font-bold
 
             text-[#081C15]
 
             uppercase
+
+            leading-[1.1]
+
+            max-w-5xl
+            mx-auto
             "
             style={{
               fontFamily:
@@ -98,29 +152,38 @@ export default function InvestmentPlans() {
           </h2>
         </motion.div>
 
-        {/* PLANS */}
+        {/* PLANS GRID */}
 
         <div
           className="
           grid
           lg:grid-cols-3
 
-          gap-12
+          gap-10
+          xl:gap-12
 
           items-stretch
           "
         >
-          {plans.map((plan, index) => (
-            <InvestmentCard
-              key={index}
-              title={plan.title}
-              investment={
-                plan.investment
-              }
-              returns={plan.returns}
-              featured={plan.featured}
-            />
-          ))}
+          {plans.map(
+            (plan, index) => (
+              <InvestmentCard
+                key={index}
+                title={
+                  plan.title
+                }
+                investment={
+                  plan.investment
+                }
+                returns={
+                  plan.returns
+                }
+                featured={
+                  plan.featured
+                }
+              />
+            )
+          )}
         </div>
       </div>
     </section>

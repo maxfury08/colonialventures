@@ -23,6 +23,8 @@ import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 
 import ContactCTA from "../components/ContactCTA";
+import Reveal  from "../components/Reveal";
+import InvestmentChart from "../components/InvestmentChart";
 
 export default function Home() {
   return (
@@ -31,49 +33,65 @@ export default function Home() {
 
       <Hero />
 
+
       {/* CREAM SECTION */}
 
-      <WhyPepper />
+      <Reveal>
+        <WhyPepper />
+      </Reveal>
 
       {/* DARK GREEN SECTION */}
-
+      <Reveal>  
       <ROIStats />
+      </Reveal>
 
       {/* WHITE SECTION */}
-
+      <Reveal>
       <Features />
-
+      </Reveal>
       {/* DARK SECTION */}
-
+      <Reveal>
       <HowItWorks />
+      </Reveal>
 
       {/* CREAM SECTION */}
-
+      <Reveal>
       <Calculator />
+      </Reveal>
+
+      <Reveal>
+      <InvestmentChart />
+      </Reveal>
 
       {/* WHITE SECTION */}
-
+      <Reveal>
       <InvestmentPlans />
+      </Reveal>
 
       {/* DARK GREEN SECTION */}
-
-      <GlobalExports />
+      <Reveal>
+        <GlobalExports />
+      </Reveal>
+      
 
       {/* CREAM SECTION */}
-
+      <Reveal>
       <Sustainability />
-
+      </Reveal>
       {/* WHITE SECTION */}
-
+      <Reveal>
       <PlantationGallery />
+      </Reveal>
 
       {/* CREAM SECTION */}
-
+      <Reveal>
       <Testimonials />
-
+      </Reveal>
       {/* WHITE SECTION */}
 
+      <Reveal>
       <FAQ />
+      </Reveal>
 
       {/* GREEN CTA */}
 

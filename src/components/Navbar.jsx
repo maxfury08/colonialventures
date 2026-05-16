@@ -8,7 +8,10 @@ import {
 import {
   Menu,
   X,
+  Globe,
 } from "lucide-react";
+
+import { useTranslation } from "react-i18next";
 
 import logo from "../assets/images/logo.png";
 
@@ -21,9 +24,20 @@ export default function Navbar() {
 
   const location = useLocation();
 
+  const { i18n } =
+    useTranslation();
+
+  const changeLanguage = (
+    lang
+  ) => {
+    i18n.changeLanguage(lang);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(
+        window.scrollY > 30
+      );
     };
 
     window.addEventListener(
@@ -71,20 +85,29 @@ export default function Navbar() {
       fixed
       top-0
       left-0
+      bg-white/70
+      backdrop-blur-2xl
+      border-b
+      border-white/20
+      shadow-[0_8px_40px_rgba(0,0,0,0.08)]
+
       w-full
+
       z-50
+
       transition-all
-      duration-300
+      duration-500
+      
 
       ${
         scrolled
           ? `
-          bg-[#FAF8F3]/95
+          bg-[#F8F5F0]/95
           backdrop-blur-xl
           shadow-lg
           `
           : `
-          bg-[#FAF8F3]/85
+          bg-[#F8F5F0]
           backdrop-blur-md
           `
       }
@@ -97,15 +120,16 @@ export default function Navbar() {
 
         px-6
         lg:px-8
+        
 
-        h-[88px]
+        h-[74px]
 
         flex
         items-center
         justify-between
         "
       >
-        {/* LOGO + NAME */}
+        {/* LOGO */}
 
         <Link
           to="/"
@@ -113,72 +137,75 @@ export default function Navbar() {
           flex
           items-center
           gap-4
+
+          flex-shrink-0
           "
         >
-          {/* LOGO */}
-
           <img
             src={logo}
             alt="Colonial Ventures"
             className="
             h-12
-            md:h-14
+            md:h-14   
+
             object-contain
             "
           />
 
-          {/* TEXT */}
-
-          <div
-            className="
-            hidden
-            sm:flex
-            flex-col
-            justify-center
-            "
-          >
+          <div>
             <h1
               className="
-              text-[28px]
+              text-[24px]
               md:text-[34px]
-              font-semibold
-              text-[#0B1D16]
+
               leading-none
-              tracking-tight
+
+              font-bold
+
+              text-[#10231d]
+
+              uppercase
               "
               style={{
-                fontFamily: "Georgia, serif",
+                fontFamily:
+                  "Georgia, serif",
               }}
             >
-              COLONIAL VENTURES
+              Colonial Ventures
             </h1>
 
             <p
               className="
-              text-[11px]
-              md:text-[12px]
-              tracking-[6px]
+              hidden
+              md:block
+
+              text-[12px]
+
+              tracking-[4px]
+
               text-gray-500
-              uppercase
+
               mt-1
               "
             >
-              Premium Pepper Plantations
+              PREMIUM PEPPER
+              PLANTATIONS
             </p>
           </div>
         </Link>
 
-        {/* DESKTOP MENU */}
+        {/* DESKTOP NAV */}
 
         <div
           className="
           hidden
-          md:flex
+          lg:flex
+
           items-center
           gap-10
           "
         >
-          {/* NAVIGATION */}
+          {/* LINKS */}
 
           <div
             className="
@@ -187,120 +214,163 @@ export default function Navbar() {
             gap-8
             "
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`
-                text-lg
-                font-medium
-                transition-all
-                duration-300
+            {navLinks.map(
+              (link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`
+                  text-[17px]
 
-                hover:text-[#D4AF37]
+                  font-medium
 
-                ${
-                  location.pathname ===
-                  link.path
-                    ? "text-[#D4AF37]"
-                    : "text-[#0B1D16]"
-                }
-                `}
-              >
-                {link.name}
-              </Link>
-            ))}
+                  transition-all
+                  duration-300
+
+                  hover:text-[#D4AF37]
+
+                  ${
+                    location.pathname ===
+                    link.path
+                      ? "text-[#D4AF37]"
+                      : "text-[#081C15]"
+                  }
+                  `}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
 
-          {/* LANGUAGE */}
+          {/* LANGUAGE SWITCHER */}
 
           <div
             className="
             flex
             items-center
-            gap-3
-            ml-4
+
+            bg-white
+
+            border
+            border-gray-200
+
+            rounded-full
+
+            p-1
+
+            shadow-none
             "
           >
-            <button
-              className="
-              bg-[#D4AF37]
-              text-black
+            {/* ICON */}
 
+            <div
+              className="
+              w-10
+              h-10
+
+              flex
+              items-center
+              justify-center
+
+              text-[#D4AF37]
+              "
+            >
+              <Globe size={18} />
+            </div>
+
+            {/* EN */}
+
+            <button
+              onClick={() =>
+                changeLanguage(
+                  "en"
+                )
+              }
+              className={`
               px-5
-              py-2.5
+              py-2
 
               rounded-full
+
               text-sm
               font-semibold
 
-              shadow-md
-              "
+              transition-all
+
+              ${
+                i18n.language ===
+                "en"
+                  ? `
+                  bg-[#D4AF37]
+                  text-black
+                  `
+                  : `
+                  text-gray-600
+                  hover:text-black
+                  `
+              }
+              `}
             >
               EN
             </button>
 
-            <button
-              className="
-              border
-              border-gray-300
-
-              text-gray-700
-
-              px-5
-              py-2.5
-
-              rounded-full
-              text-sm
-
-              hover:bg-[#D4AF37]
-              hover:text-black
-
-              transition-all
-              "
-            >
-              සිං
-            </button>
+            {/* SI */}
 
             <button
-              className="
-              border
-              border-gray-300
-
-              text-gray-700
-
+              onClick={() =>
+                changeLanguage(
+                  "si"
+                )
+              }
+              className={`
               px-5
-              py-2.5
+              py-2
 
               rounded-full
-              text-sm
 
-              hover:bg-[#D4AF37]
-              hover:text-black
+              text-sm
+              font-semibold
 
               transition-all
-              "
+
+              ${
+                i18n.language ===
+                "si"
+                  ? `
+                  bg-[#D4AF37]
+                  text-black
+                  `
+                  : `
+                  text-gray-600
+                  hover:text-black
+                  `
+              }
+              `}
             >
-              தமிழ்
+              සිංහල
             </button>
           </div>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE BUTTON */}
 
         <button
           className="
-          md:hidden
-          text-[#0B1D16]
+          lg:hidden
+
+          text-[#10231d]
           "
           onClick={() =>
-            setMenuOpen(!menuOpen)
+            setMenuOpen(
+              !menuOpen
+            )
           }
         >
           {menuOpen ? (
-            <X size={30} />
+            <X size={32} />
           ) : (
-            <Menu size={30} />
+            <Menu size={32} />
           )}
         </button>
       </div>
@@ -310,73 +380,104 @@ export default function Navbar() {
       {menuOpen && (
         <div
           className="
-          md:hidden
+          lg:hidden
 
-          bg-[#FAF8F3]
+          bg-[#F8F5F0]
 
           border-t
           border-gray-200
 
           px-6
-          py-6
-
-          flex
-          flex-col
-          gap-6
+          py-8
           "
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={() =>
-                setMenuOpen(false)
-              }
+          <div
+            className="
+            flex
+            flex-col
+            gap-6
+            "
+          >
+            {navLinks.map(
+              (link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={() =>
+                    setMenuOpen(
+                      false
+                    )
+                  }
+                  className={`
+                  text-lg
+                  font-medium
+
+                  ${
+                    location.pathname ===
+                    link.path
+                      ? "text-[#D4AF37]"
+                      : "text-[#10231d]"
+                  }
+                  `}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+
+            {/* MOBILE LANG */}
+
+            <div
               className="
-              text-[#0B1D16]
-              text-lg
-              font-medium
+              flex
+              gap-4
+
+              pt-4
               "
             >
-              {link.name}
-            </Link>
-          ))}
+              <button
+                onClick={() =>
+                  changeLanguage(
+                    "en"
+                  )
+                }
+                className="
+                bg-[#D4AF37]
 
-          {/* MOBILE LANGUAGE */}
+                text-black
 
-          <div className="flex gap-3 pt-4">
-            <button
-              className="
-              bg-[#D4AF37]
-              text-black
+                px-6
+                py-3
 
-              px-5
-              py-2.5
+                rounded-full
 
-              rounded-full
-              text-sm
-              font-semibold
-              "
-            >
-              EN
-            </button>
+                font-semibold
+                "
+              >
+                English
+              </button>
 
-            <button
-              className="
-              border
-              border-gray-300
+              <button
+                onClick={() =>
+                  changeLanguage(
+                    "si"
+                  )
+                }
+                className="
+                border
+                border-gray-300
 
-              text-gray-700
+                px-6
+                py-3
 
-              px-5
-              py-2.5
+                rounded-full
 
-              rounded-full
-              text-sm
-              "
-            >
-              සිංහල
-            </button>
+                font-semibold
+                "
+              >
+                සිංහල
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -59,6 +59,7 @@ export default function Testimonials() {
           md:grid-cols-2
           lg:grid-cols-3
           gap-8
+          
           "
         >
           {testimonials.map(
@@ -85,6 +86,10 @@ export default function Testimonials() {
                 rounded-[35px]
 
                 shadow-xl
+                hover:-translate-y-2
+                hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+                transition-all
+                duration-500
 
                 border
                 border-gray-200

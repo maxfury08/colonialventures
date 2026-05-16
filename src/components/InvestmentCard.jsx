@@ -30,7 +30,9 @@ export default function InvestmentCard({
       duration-500
 
       hover:-translate-y-2
-      hover:shadow-2xl
+      hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+      transition-all
+      duration-500
 
       min-h-[520px]
 

@@ -33,9 +33,13 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsConditions from "../pages/TermsConditions";
 
 import NotFound from "../pages/NotFound";
+import {
+  AnimatePresence,
+} from "framer-motion";
 
 export default function AppRoutes() {
   return (
+    <AnimatePresence mode="wait">
     <Routes>
       {/* MAIN WEBSITE */}
 
@@ -147,5 +151,6 @@ export default function AppRoutes() {
         />
       </Route>
     </Routes>
+    </AnimatePresence>
   );
 }

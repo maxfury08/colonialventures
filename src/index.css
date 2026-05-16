@@ -178,3 +178,40 @@ h6 {
     line-height: 1.1;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081c15;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #d4af37,
+    #8b6b12
+  );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}

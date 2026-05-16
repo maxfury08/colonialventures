@@ -1,12 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* GOOGLE FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* GLOBAL RESET */
+/* TAILWIND */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RESET */
 
 * {
   margin: 0;
@@ -24,8 +26,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #000;
-  color: white;
+  background: #000000;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -40,23 +42,26 @@ h6 {
   font-family: 'Cinzel', serif;
 }
 
-/* CUSTOM SCROLLBAR */
+/* LINKS */
 
-::-webkit-scrollbar {
-  width: 10px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-::-webkit-scrollbar-track {
-  background: #081C15;
+/* IMAGES */
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 10px;
-}
+/* BUTTONS */
 
-::-webkit-scrollbar-thumb:hover {
-  background: #c49c22;
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* SELECTION */
@@ -82,52 +87,22 @@ h6 {
   padding-bottom: 6rem;
 }
 
-/* BUTTON GLOW */
+/* TEXT COLORS */
 
-.gold-glow {
-  box-shadow:
-    0 0 15px rgba(212, 175, 55, 0.5),
-    0 0 30px rgba(212, 175, 55, 0.2);
+.text-muted {
+  color: #b8b8b8;
 }
 
-/* IMAGE HOVER */
+/* GOLD TEXT */
 
-.image-hover {
-  transition: transform 0.5s ease;
+.gold-text {
+  color: #D4AF37;
 }
 
-.image-hover:hover {
-  transform: scale(1.05);
-}
+/* DARK SECTION */
 
-/* FADE ANIMATION */
-
-.fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* HERO OVERLAY */
-
-.hero-overlay {
-  background:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.2)
-    );
+.dark-section {
+  background: #081C15;
 }
 
 /* PREMIUM CARD */
@@ -148,22 +123,39 @@ h6 {
   transform: translateY(-8px);
 }
 
-/* GOLD TEXT */
+/* IMAGE HOVER */
 
-.gold-text {
-  color: #D4AF37;
+.image-hover {
+  transition: transform 0.5s ease;
 }
 
-/* DARK SECTION */
-
-.dark-section {
-  background: #081C15;
+.image-hover:hover {
+  transform: scale(1.05);
 }
 
-/* TEXT COLORS */
+/* GOLD BUTTON */
 
-.text-muted {
-  color: #b3b3b3;
+.gold-button {
+  background: #D4AF37;
+  color: black;
+
+  transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+  background: #c49c22;
+}
+
+/* HERO OVERLAY */
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.2)
+    );
 }
 
 /* RESPONSIVE */

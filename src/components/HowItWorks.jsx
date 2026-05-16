@@ -1,39 +1,38 @@
 import { motion } from "framer-motion";
+
 import {
-  FaHandHoldingUsd,
   FaSeedling,
-  FaShippingFast,
-  FaMoneyCheckAlt,
+  FaChartLine,
+  FaGlobe,
 } from "react-icons/fa";
 
 export default function HowItWorks() {
   const steps = [
     {
-      icon: <FaHandHoldingUsd size={40} />,
-      title: "Choose Your Investment",
+      icon: <FaSeedling size={42} />,
+
+      title: "Invest in Plantation Growth",
+
       description:
-        "Select an investment plan that aligns with your financial goals and preferred investment duration.",
+        "Choose a plantation investment plan tailored to your long-term financial goals.",
     },
 
     {
-      icon: <FaSeedling size={40} />,
-      title: "Plantation Cultivation",
+      icon: <FaChartLine size={42} />,
+
+      title: "Cultivation & Harvesting",
+
       description:
-        "Our experienced plantation team manages cultivation, maintenance, and sustainable farming operations.",
+        "Our agricultural experts manage cultivation, harvesting, and sustainable estate operations.",
     },
 
     {
-      icon: <FaShippingFast size={40} />,
-      title: "Harvest & Export",
-      description:
-        "Premium pepper harvests are processed and exported to international markets.",
-    },
+      icon: <FaGlobe size={42} />,
 
-    {
-      icon: <FaMoneyCheckAlt size={40} />,
-      title: "Receive Monthly Returns",
+      title: "Export & Investor Returns",
+
       description:
-        "Investors receive structured monthly returns generated through plantation harvest revenue.",
+        "Pepper exports generate recurring returns through international market demand.",
     },
   ];
 
@@ -50,20 +49,28 @@ export default function HowItWorks() {
         {/* HEADER */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center mb-20"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="text-center mb-24"
         >
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
           >
-            Investment Process
+            How It Works
           </p>
 
           <h2
@@ -73,7 +80,7 @@ export default function HowItWorks() {
             font-bold
             "
           >
-            How Colonial Ventures Works
+            A Simple Investment Process
           </h2>
         </motion.div>
 
@@ -82,28 +89,42 @@ export default function HowItWorks() {
         <div
           className="
           grid
-          md:grid-cols-2
-          lg:grid-cols-4
+          md:grid-cols-3
           gap-10
           "
         >
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
               transition={{
                 duration: 0.8,
                 delay: index * 0.2,
               }}
               className="
               relative
-              bg-black
+
+              bg-black/20
+
               border
               border-white/10
-              rounded-3xl
-              p-8
-              text-center
+
+              rounded-[35px]
+
+              p-10
+
+              hover:border-[#D4AF37]
+              hover:-translate-y-2
+
+              transition-all
+              duration-500
               "
             >
               {/* STEP NUMBER */}
@@ -111,44 +132,42 @@ export default function HowItWorks() {
               <div
                 className="
                 absolute
-                -top-5
-                left-1/2
-                -translate-x-1/2
-                bg-[#D4AF37]
-                text-black
-                w-10
-                h-10
-                rounded-full
-                flex
-                items-center
-                justify-center
+                top-6
+                right-6
+
+                text-6xl
                 font-bold
+
+                text-white/5
                 "
               >
-                {index + 1}
+                0{index + 1}
               </div>
+
+              {/* ICON */}
 
               <div
                 className="
                 text-[#D4AF37]
-                flex
-                justify-center
-                mb-6
-                mt-4
+                mb-8
                 "
               >
                 {step.icon}
               </div>
 
+              {/* TITLE */}
+
               <h3
                 className="
                 text-2xl
                 font-semibold
-                mb-4
+                mb-5
                 "
               >
                 {step.title}
               </h3>
+
+              {/* DESCRIPTION */}
 
               <p className="text-gray-400 leading-relaxed">
                 {step.description}

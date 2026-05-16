@@ -1,27 +1,12 @@
 import { motion } from "framer-motion";
 
-import gallery1 from "../assets/images/gallery-1.png";
-import gallery2 from "../assets/images/gallery-2.png";
-import gallery3 from "../assets/images/gallery-3.png";
-import plantationDrone from "../assets/images/plantation-drone.png";
-import pepperField from "../assets/images/pepper-field.png";
-import sustainability from "../assets/images/sustainability.png";
+import gallery from "../data/gallery";
 
 export default function PlantationGallery() {
-  const images = [
-    gallery1,
-    gallery2,
-    gallery3,
-    plantationDrone,
-    pepperField,
-    sustainability,
-  ];
-
   return (
     <section
       className="
-      bg-[#081C15]
-      text-white
+      bg-white
       py-24
       px-6
       "
@@ -46,7 +31,7 @@ export default function PlantationGallery() {
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
@@ -59,13 +44,14 @@ export default function PlantationGallery() {
             text-4xl
             md:text-5xl
             font-bold
+            text-[#081C15]
             "
           >
-            Explore Colonial Ventures
+            Explore Our Pepper Estates
           </h2>
         </motion.div>
 
-        {/* GRID */}
+        {/* GALLERY */}
 
         <div
           className="
@@ -75,16 +61,16 @@ export default function PlantationGallery() {
           gap-8
           "
         >
-          {images.map((image, index) => (
+          {gallery.map((image, index) => (
             <motion.div
               key={index}
               initial={{
                 opacity: 0,
-                scale: 0.9,
+                y: 50,
               }}
               whileInView={{
                 opacity: 1,
-                scale: 1,
+                y: 0,
               }}
               transition={{
                 duration: 0.8,
@@ -92,18 +78,20 @@ export default function PlantationGallery() {
               }}
               className="
               overflow-hidden
-              rounded-3xl
-              group
+              rounded-[35px]
+              shadow-xl
               "
             >
               <img
-                src={image}
-                alt="Plantation"
+                src={image.image}
+                alt={image.title}
                 className="
-                h-[400px]
                 w-full
+                h-[350px]
                 object-cover
-                group-hover:scale-110
+
+                hover:scale-110
+
                 transition-all
                 duration-700
                 "

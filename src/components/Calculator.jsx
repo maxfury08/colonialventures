@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { motion } from "framer-motion";
 
 export default function Calculator() {
@@ -66,14 +67,13 @@ export default function Calculator() {
           </h2>
         </motion.div>
 
-        {/* CALCULATOR */}
+        {/* GRID */}
 
         <div
           className="
           grid
           lg:grid-cols-2
           gap-16
-          items-center
           "
         >
           {/* INPUTS */}
@@ -92,23 +92,18 @@ export default function Calculator() {
             }}
             className="
             bg-[#081C15]
-            border
-            border-white/10
-            rounded-3xl
+
+            rounded-[35px]
+
             p-10
+
             text-white
+
+            shadow-2xl
             "
           >
-            {/* INVESTMENT */}
-
             <div className="mb-10">
-              <label
-                className="
-                block
-                text-lg
-                mb-4
-                "
-              >
+              <label className="block text-lg mb-4">
                 Investment Amount
               </label>
 
@@ -128,8 +123,8 @@ export default function Calculator() {
 
               <div
                 className="
-                mt-4
-                text-3xl
+                mt-5
+                text-4xl
                 font-bold
                 text-[#D4AF37]
                 "
@@ -139,16 +134,8 @@ export default function Calculator() {
               </div>
             </div>
 
-            {/* YEARS */}
-
             <div>
-              <label
-                className="
-                block
-                text-lg
-                mb-4
-                "
-              >
+              <label className="block text-lg mb-4">
                 Investment Duration
               </label>
 
@@ -162,9 +149,13 @@ export default function Calculator() {
                     className={`
                     px-6
                     py-3
+
                     rounded-full
+
                     font-semibold
+
                     transition-all
+
                     ${
                       years === year
                         ? "bg-[#D4AF37] text-black"
@@ -195,11 +186,14 @@ export default function Calculator() {
             }}
             className="
             bg-[#081C15]
-            border
-            border-white/10
-            rounded-3xl
+
+            rounded-[35px]
+
             p-10
+
             text-white
+
+            shadow-2xl
             "
           >
             <div className="space-y-10">
@@ -261,12 +255,18 @@ export default function Calculator() {
               <button
                 className="
                 w-full
+
                 bg-[#D4AF37]
                 hover:bg-[#c49c22]
+
                 text-black
+
                 py-4
+
                 rounded-full
+
                 font-semibold
+
                 transition-all
                 "
               >

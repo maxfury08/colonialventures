@@ -49,7 +49,7 @@ export default function Features() {
   return (
     <section
       className="
-      bg-[#F8F5F0]
+      bg-white
       text-[#0B1D16]
 
       py-24
@@ -57,7 +57,7 @@ export default function Features() {
       "
     >
       <div className="max-w-7xl mx-auto">
-        {/* TITLE */}
+        {/* HEADER */}
 
         <motion.div
           initial={{
@@ -123,27 +123,22 @@ export default function Features() {
                   delay: index * 0.2,
                 }}
                 className="
-                bg-white
+                bg-[#081C15]
 
                 p-8
 
                 rounded-3xl
 
                 border
-                border-gray-200
+                border-white/10
 
-                shadow-lg
-
-                hover:shadow-2xl
-                hover:-translate-y-2
                 hover:border-[#D4AF37]
+                hover:-translate-y-2
 
                 transition-all
                 duration-500
                 "
               >
-                {/* ICON */}
-
                 <div
                   className="
                   text-[#D4AF37]
@@ -153,23 +148,20 @@ export default function Features() {
                   {feature.icon}
                 </div>
 
-                {/* TITLE */}
-
                 <h3
                   className="
                   text-2xl
                   font-semibold
                   mb-4
+                  text-white
                   "
                 >
                   {feature.title}
                 </h3>
 
-                {/* DESCRIPTION */}
-
                 <p
                   className="
-                  text-gray-600
+                  text-gray-400
                   leading-relaxed
                   "
                 >

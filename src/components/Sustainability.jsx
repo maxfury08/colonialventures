@@ -6,8 +6,7 @@ export default function Sustainability() {
   return (
     <section
       className="
-      bg-[#081C15]
-      text-white
+      bg-[#F8F5F0]
       py-24
       px-6
       "
@@ -16,9 +15,10 @@ export default function Sustainability() {
         className="
         max-w-7xl
         mx-auto
+
         grid
         lg:grid-cols-2
-        gap-16
+        gap-20
         items-center
         "
       >
@@ -41,10 +41,10 @@ export default function Sustainability() {
             src={sustainability}
             alt="Sustainability"
             className="
-            rounded-3xl
+            rounded-[40px]
             shadow-2xl
-            h-[600px]
             w-full
+            h-[650px]
             object-cover
             "
           />
@@ -68,7 +68,7 @@ export default function Sustainability() {
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
@@ -81,110 +81,63 @@ export default function Sustainability() {
             text-4xl
             md:text-5xl
             font-bold
+            text-[#081C15]
             leading-tight
             mb-8
             "
           >
-            Plantation Growth That Protects Nature
+            Responsible Cultivation for Future Generations
           </h2>
 
           <p
             className="
             text-lg
-            text-gray-300
+            text-gray-600
             leading-relaxed
-            mb-8
+            mb-10
             "
           >
-            Colonial Ventures focuses on
-            environmentally responsible
-            cultivation methods that preserve
-            biodiversity, support local
-            communities, and create sustainable
-            agricultural growth.
+            Colonial Ventures is committed
+            to environmentally responsible
+            agricultural practices that
+            protect Sri Lanka’s natural
+            ecosystems while supporting
+            sustainable economic growth.
           </p>
 
           <div className="space-y-6">
-            <div
-              className="
-              bg-black
-              border
-              border-white/10
-              rounded-2xl
-              p-6
-              "
-            >
-              <h3
+            {[
+              "Eco-friendly farming practices",
+              "Water conservation systems",
+              "Sustainable land management",
+              "Support for local communities",
+            ].map((item, index) => (
+              <div
+                key={index}
                 className="
-                text-2xl
-                font-semibold
-                text-[#D4AF37]
-                mb-3
+                bg-white
+
+                p-5
+
+                rounded-2xl
+
+                border
+                border-gray-200
+
+                shadow-md
                 "
               >
-                Eco-Friendly Farming
-              </h3>
-
-              <p className="text-gray-300">
-                Sustainable agricultural practices
-                designed for long-term plantation
-                health.
-              </p>
-            </div>
-
-            <div
-              className="
-              bg-black
-              border
-              border-white/10
-              rounded-2xl
-              p-6
-              "
-            >
-              <h3
-                className="
-                text-2xl
-                font-semibold
-                text-[#D4AF37]
-                mb-3
-                "
-              >
-                Water Conservation
-              </h3>
-
-              <p className="text-gray-300">
-                Efficient irrigation and water
-                management systems that reduce
-                environmental impact.
-              </p>
-            </div>
-
-            <div
-              className="
-              bg-black
-              border
-              border-white/10
-              rounded-2xl
-              p-6
-              "
-            >
-              <h3
-                className="
-                text-2xl
-                font-semibold
-                text-[#D4AF37]
-                mb-3
-                "
-              >
-                Community Development
-              </h3>
-
-              <p className="text-gray-300">
-                Supporting local employment and
-                sustainable economic growth in
-                plantation communities.
-              </p>
-            </div>
+                <p
+                  className="
+                  text-lg
+                  font-medium
+                  text-[#081C15]
+                  "
+                >
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

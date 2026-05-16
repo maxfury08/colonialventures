@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { ChevronDown } from "lucide-react";
 
 import faq from "../data/faq";
@@ -8,34 +10,40 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] =
     useState(null);
 
-  const toggleFAQ = (index) => {
-    setActiveIndex(
-      activeIndex === index ? null : index
-    );
-  };
-
   return (
     <section
       className="
-      bg-[#F8F5F0]
-      text-black
+      bg-white
       py-24
       px-6
       "
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* HEADER */}
 
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="text-center mb-20"
+        >
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
           >
-            Frequently Asked Questions
+            FAQ
           </p>
 
           <h2
@@ -46,36 +54,44 @@ export default function FAQ() {
             text-[#081C15]
             "
           >
-            Investor FAQ
+            Frequently Asked Questions
           </h2>
-        </div>
+        </motion.div>
 
-        {/* FAQS */}
+        {/* FAQ ITEMS */}
 
         <div className="space-y-6">
           {faq.map((item, index) => (
             <div
-              key={item.id}
+              key={index}
               className="
-              bg-white
+              bg-[#F8F5F0]
+
+              rounded-[30px]
+
               border
               border-gray-200
-              rounded-2xl
+
               overflow-hidden
-              shadow-lg
               "
             >
               <button
                 onClick={() =>
-                  toggleFAQ(index)
+                  setActiveIndex(
+                    activeIndex === index
+                      ? null
+                      : index
+                  )
                 }
                 className="
                 w-full
+
                 flex
-                items-center
                 justify-between
-                px-8
-                py-6
+                items-center
+
+                p-8
+
                 text-left
                 "
               >
@@ -106,7 +122,8 @@ export default function FAQ() {
                   className="
                   px-8
                   pb-8
-                  text-gray-700
+
+                  text-gray-600
                   leading-relaxed
                   "
                 >

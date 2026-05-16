@@ -7,13 +7,16 @@ export default function ContactCTA() {
     <section
       className="
       relative
+
       py-24
       px-6
+
       bg-[#081C15]
+
       overflow-hidden
       "
     >
-      {/* BACKGROUND GLOW */}
+      {/* GLOW */}
 
       <div
         className="
@@ -21,10 +24,14 @@ export default function ContactCTA() {
         top-0
         left-1/2
         -translate-x-1/2
+
         w-[700px]
         h-[700px]
+
         bg-[#D4AF37]/10
+
         blur-[120px]
+
         rounded-full
         "
       ></div>
@@ -33,8 +40,10 @@ export default function ContactCTA() {
         className="
         relative
         z-10
+
         max-w-5xl
         mx-auto
+
         text-center
         "
       >
@@ -52,7 +61,7 @@ export default function ContactCTA() {
           }}
           className="
           uppercase
-          tracking-[4px]
+          tracking-[5px]
           text-[#D4AF37]
           mb-4
           "
@@ -76,9 +85,12 @@ export default function ContactCTA() {
           text-4xl
           md:text-6xl
           font-bold
-          leading-tight
-          mb-8
+
           text-white
+
+          leading-tight
+
+          mb-8
           "
         >
           Invest in Sri Lanka’s Premium Pepper Plantation Future
@@ -99,17 +111,23 @@ export default function ContactCTA() {
           className="
           text-lg
           md:text-xl
+
           text-gray-300
+
           leading-relaxed
+
           max-w-3xl
           mx-auto
+
           mb-12
           "
         >
-          Speak with our plantation investment
-          specialists and discover sustainable
-          opportunities backed by real agricultural
-          assets and export-driven growth.
+          Speak with our plantation
+          investment specialists and
+          discover sustainable
+          opportunities backed by real
+          agricultural assets and
+          export-driven growth.
         </motion.p>
 
         {/* BUTTONS */}
@@ -139,14 +157,18 @@ export default function ContactCTA() {
             className="
             bg-[#D4AF37]
             hover:bg-[#c49c22]
+
             text-black
+
             px-10
             py-5
+
             rounded-full
+
             text-lg
             font-semibold
+
             transition-all
-            shadow-lg
             "
           >
             Contact Us
@@ -159,16 +181,20 @@ export default function ContactCTA() {
             className="
             border
             border-white/20
-            text-white
 
             hover:bg-white
             hover:text-[#081C15]
 
+            text-white
+
             px-10
             py-5
+
             rounded-full
+
             text-lg
             font-semibold
+
             transition-all
             "
           >

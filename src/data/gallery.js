@@ -1,14 +1,14 @@
-import gallery1 from "../assets/images/gallery-1.jpg";
+import gallery1 from "../assets/images/gallery-1.png";
 
-import gallery2 from "../assets/images/gallery-2.jpg";
+import gallery2 from "../assets/images/gallery-2.png";
 
-import gallery3 from "../assets/images/gallery-3.jpg";
+import gallery3 from "../assets/images/gallery-3.png";
 
-import plantationDrone from "../assets/images/plantation-drone.jpg";
+import plantationDrone from "../assets/images/plantation-drone.png";
 
-import pepperField from "../assets/images/pepper-field.jpg";
+import pepperField from "../assets/images/pepper-field.png";
 
-import sustainability from "../assets/images/sustainability.jpg";
+import sustainability from "../assets/images/sustainability.png";
 
 const gallery = [
   {

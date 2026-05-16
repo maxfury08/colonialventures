@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
+
 import pepperField from "../assets/images/pepper-field.png";
 
 export default function WhyPepper() {
   const features = [
     {
       title: "Global Export Demand",
+
       description:
         "Sri Lankan pepper remains one of the world’s most sought-after premium spices with consistent international demand.",
     },
 
     {
       title: "Sustainable Long-Term Crop",
+
       description:
         "Pepper cultivation offers long harvest cycles and recurring income opportunities through sustainable agriculture.",
     },
 
     {
       title: "Premium Sri Lankan Quality",
+
       description:
         "Central Province pepper is renowned globally for its aroma, strength, and superior export-grade quality.",
     },
@@ -26,7 +30,6 @@ export default function WhyPepper() {
     <section
       className="
       bg-[#F8F5F0]
-      text-black
       py-24
       px-6
       "
@@ -35,28 +38,37 @@ export default function WhyPepper() {
         className="
         max-w-7xl
         mx-auto
+
         grid
         lg:grid-cols-2
-        gap-16
+        gap-20
         items-center
         "
       >
         {/* IMAGE */}
 
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            x: -50,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
         >
           <img
             src={pepperField}
             alt="Pepper Plantation"
             className="
-            rounded-3xl
+            rounded-[40px]
             shadow-2xl
-            object-cover
-            h-[600px]
+            h-[650px]
             w-full
+            object-cover
             "
           />
         </motion.div>
@@ -64,14 +76,22 @@ export default function WhyPepper() {
         {/* CONTENT */}
 
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            x: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
         >
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
@@ -85,28 +105,27 @@ export default function WhyPepper() {
             md:text-5xl
             font-bold
             leading-tight
-            mb-8
             text-[#081C15]
+            mb-8
             "
           >
-            A High-Value Crop Built for Sustainable Growth.
+            Sustainable Agriculture Backed by Global Demand
           </h2>
 
           <p
             className="
-            text-gray-700
             text-lg
+            text-gray-600
             leading-relaxed
-            mb-10
+            mb-12
             "
           >
-            Pepper is one of Sri Lanka’s most
-            profitable and globally recognized export
-            crops. Colonial Ventures focuses on
-            premium pepper cultivation in the fertile
-            highlands of the Central Province,
-            combining sustainability with long-term
-            investment potential.
+            Colonial Ventures focuses on
+            premium pepper cultivation in
+            Sri Lanka’s fertile Central
+            Province, combining sustainable
+            agriculture with long-term
+            investment opportunities.
           </p>
 
           <div className="space-y-6">
@@ -115,25 +134,35 @@ export default function WhyPepper() {
                 key={index}
                 className="
                 bg-white
+
                 p-6
-                rounded-2xl
-                shadow-lg
+
+                rounded-3xl
+
                 border
                 border-gray-200
+
+                shadow-md
+
+                hover:shadow-xl
+                hover:-translate-y-1
+
+                transition-all
+                duration-500
                 "
               >
                 <h3
                   className="
-                  text-xl
+                  text-2xl
                   font-semibold
                   text-[#081C15]
-                  mb-2
+                  mb-3
                   "
                 >
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>

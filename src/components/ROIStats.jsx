@@ -1,30 +1,25 @@
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
 
 export default function ROIStats() {
   const stats = [
     {
-      number: 3.33,
-      suffix: "%",
-      title: "Monthly Returns",
+      number: "120+",
+      label: "Acres Cultivated",
     },
 
     {
-      number: 500,
-      suffix: "+",
-      title: "Acres Under Cultivation",
+      number: "18+",
+      label: "Export Destinations",
     },
 
     {
-      number: 100,
-      suffix: "+",
-      title: "Global Export Partners",
+      number: "12",
+      label: "Years Experience",
     },
 
     {
-      number: 10,
-      suffix: "+",
-      title: "Years Plantation Experience",
+      number: "3",
+      label: "Harvest Seasons",
     },
   ];
 
@@ -57,7 +52,7 @@ export default function ROIStats() {
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
@@ -72,7 +67,7 @@ export default function ROIStats() {
             font-bold
             "
           >
-            Sustainable Growth Backed by Real Assets
+            Building Long-Term Agricultural Value
           </h2>
         </motion.div>
 
@@ -91,7 +86,7 @@ export default function ROIStats() {
               key={index}
               initial={{
                 opacity: 0,
-                y: 40,
+                y: 50,
               }}
               whileInView={{
                 opacity: 1,
@@ -102,12 +97,24 @@ export default function ROIStats() {
                 delay: index * 0.2,
               }}
               className="
-              bg-black
+              bg-black/20
+
+              backdrop-blur-xl
+
               border
               border-white/10
+
               rounded-3xl
+
               p-10
+
               text-center
+
+              hover:border-[#D4AF37]
+              hover:-translate-y-2
+
+              transition-all
+              duration-500
               "
             >
               <h3
@@ -118,26 +125,16 @@ export default function ROIStats() {
                 mb-4
                 "
               >
-                <CountUp
-                  end={stat.number}
-                  duration={3}
-                  decimals={
-                    stat.number % 1 !== 0
-                      ? 2
-                      : 0
-                  }
-                />
-
-                {stat.suffix}
+                {stat.number}
               </h3>
 
               <p
                 className="
-                text-gray-300
                 text-lg
+                text-gray-300
                 "
               >
-                {stat.title}
+                {stat.label}
               </p>
             </motion.div>
           ))}

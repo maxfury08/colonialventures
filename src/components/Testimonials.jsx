@@ -7,7 +7,6 @@ export default function Testimonials() {
     <section
       className="
       bg-[#F8F5F0]
-      text-black
       py-24
       px-6
       "
@@ -32,7 +31,7 @@ export default function Testimonials() {
           <p
             className="
             uppercase
-            tracking-[4px]
+            tracking-[5px]
             text-[#D4AF37]
             mb-4
             "
@@ -65,10 +64,10 @@ export default function Testimonials() {
           {testimonials.map(
             (testimonial, index) => (
               <motion.div
-                key={testimonial.id}
+                key={index}
                 initial={{
                   opacity: 0,
-                  y: 40,
+                  y: 50,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -80,35 +79,35 @@ export default function Testimonials() {
                 }}
                 className="
                 bg-white
-                rounded-3xl
+
                 p-10
+
+                rounded-[35px]
+
                 shadow-xl
+
                 border
                 border-gray-200
                 "
               >
-                {/* IMAGE */}
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="
+                  w-20
+                  h-20
 
-                <div className="mb-6">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="
-                    w-20
-                    h-20
-                    rounded-full
-                    object-cover
-                    border-2
-                    border-[#D4AF37]
-                    "
-                  />
-                </div>
+                  rounded-full
 
-                {/* REVIEW */}
+                  object-cover
+
+                  mb-6
+                  "
+                />
 
                 <p
                   className="
-                  text-gray-700
+                  text-gray-600
                   leading-relaxed
                   mb-8
                   "
@@ -116,23 +115,19 @@ export default function Testimonials() {
                   “{testimonial.review}”
                 </p>
 
-                {/* NAME */}
+                <h3
+                  className="
+                  text-2xl
+                  font-semibold
+                  text-[#081C15]
+                  "
+                >
+                  {testimonial.name}
+                </h3>
 
-                <div>
-                  <h3
-                    className="
-                    text-2xl
-                    font-bold
-                    text-[#081C15]
-                    "
-                  >
-                    {testimonial.name}
-                  </h3>
-
-                  <p className="text-gray-500">
-                    {testimonial.role}
-                  </p>
-                </div>
+                <p className="text-gray-500">
+                  {testimonial.role}
+                </p>
               </motion.div>
             )
           )}
